@@ -53,7 +53,7 @@ $strings['expresstrain'] = 'Експресен влак';
 $strings['freighttrain'] = 'Товарен влак';
 $strings['moped'] = 'Мотопед';
 $strings['oxcart'] = 'Волска каруца';
-$strings['lighttruck'] = 'Светлинен камион';
+$strings['lighttruck'] = 'Лек камион';
 $strings['suv'] = 'СЮВ';
 // lorry is used twice, so it's missing here
 $strings['autotransport5'] = 'Транспортиране на стоки от/към Ферма 5';
