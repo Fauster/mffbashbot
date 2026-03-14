@@ -1,6 +1,6 @@
 <?php
 // Functions file for My Free Farm Bash Bot (front end)
-// Copyright 2016-25 Harry Basalamah
+// Copyright 2016-26 Harry Basalamah
 // Parts of the graphics used are Copyright upjers GmbH
 //
 // For license see LICENSE file
@@ -86,7 +86,7 @@ function CreateSelectionsForBuildingID($BuildingID, $position) {
         if ($farm == 10)
          CreateOptions(1100, 1101, 1102, 1103, 1104, 1105, 1106);
         else
-         CreateOptions(1, 2, 3, 4, 5, 6, 7, 8, 17, 18, 19, 20, 21, 22, 23, 24, 26, 29, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 97, 104, 107, 108, 109, 112, 113, 114, 115, 126, 127, 128, 129, 153, 154, 158, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 825, 826, 827, 828, 829, 830, 831, 832, 833, 834);
+         CreateOptions(1, 2, 3, 4, 5, 6, 7, 8, 17, 18, 19, 20, 21, 22, 23, 24, 26, 29, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 97, 104, 107, 108, 109, 112, 113, 114, 115, 126, 127, 128, 129, 153, 154, 158, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 825, 826, 827, 828, 829, 830, 831, 832, 833, 834, 1200);
         echo "</select>\n";
         break;
   case 2:
@@ -213,9 +213,15 @@ function CreateSelectionsForBuildingID($BuildingID, $position) {
         echo "</select>\n";
         break;
   case 24:
-        // Spice house mill
+        // Gewürzmühle
         echo "<option value=\"sleep\">Sleep</option>\n";
         CreateOptions(1117, 1118, 1119, 1120, 1121, 1122, 1123, 1124, 1125, 1126);
+        echo "</select>\n";
+        break;
+  case 25:
+        // Marmeladenküche
+        echo "<option value=\"sleep\">Sleep</option>\n";
+        CreateOptions(1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209, 1210, 1211, 1212, 1213, 1214, 1215, 1216, 1217, 1218, 1219, 1220, 1221, 1222, 1223);
         echo "</select>\n";
         break;
   case "flowerarea":
@@ -324,7 +330,7 @@ function CreateSelectionsForBuildingID($BuildingID, $position) {
   case "trans210":
         // Transport -> Farms 5 - 10
         echo "<option value=\"sleep\">Sleep</option>\n";
-        CreateOptions(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 17, 18, 19, 20, 21, 22, 23, 24, 26, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 92, 93, 97, 104, 107, 108, 109, 110, 111, 112, 113, 114, 115, 126, 127, 128, 129, 151, 152, 153, 154, 155, 156, 157, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 701, 703, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 825, 826, 827, 828, 829, 830, 831, 832, 833, 834, 950, 951, 952, 953, 954, 955, 956, 957, 1100, 1101, 1102, 1103, 1104, 1105, 1106);
+        CreateOptions(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 17, 18, 19, 20, 21, 22, 23, 24, 26, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 92, 93, 97, 104, 107, 108, 109, 110, 111, 112, 113, 114, 115, 126, 127, 128, 129, 151, 152, 153, 154, 155, 156, 157, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 701, 703, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 825, 826, 827, 828, 829, 830, 831, 832, 833, 834, 950, 951, 952, 953, 954, 955, 956, 957, 1100, 1101, 1102, 1103, 1104, 1105, 1106, 1200);
         echo "</select>
         <input id=\"amountpos$position\" name=\"amountpos$position\" type=\"text\" maxlength=\"5\" size=\"5\">\n";
         break;
@@ -477,6 +483,9 @@ function GetBuildingTypeForBuildingID($buildingID) {
   case 24:
 	return "SpiceHouse";
 	break;
+  case 25:
+	return "JamFactory";
+	break;
   default:
 	return "unsupported";
   }
@@ -517,6 +526,7 @@ function CreateOptionForQueueList($queueItem, $buildingType) {
    case "TeaFactory":
    case "SushiBar":
    case "SpiceHouse":
+   case "JamFactory":
    case "KnittingMill":
    case "OilMill":
    $queueItemFriendlyName = $productlist[intval($queueItem)];
